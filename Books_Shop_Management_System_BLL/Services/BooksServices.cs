@@ -38,6 +38,13 @@ namespace Books_Shop_Management_System_BLL.Services
             return _mapper.Map<ResultResponse<IEnumerable<Books>>, ResultResponse<IEnumerable<GetBooksByPriceResultDTO>>>(result);
         }
 
+        public async Task<ResultResponse<IEnumerable<GetBooksTitleAndYearResultDTO>>> GetBooksNotRealeasedAsync(int year)
+        {
+            var result = await _unitOfWork.BooksRepository.GetBooksNotRealeasedAsync(year);
+
+            return _mapper.Map<ResultResponse<IEnumerable<Books>>, ResultResponse<IEnumerable<GetBooksTitleAndYearResultDTO>>>(result);
+        }
+
         public async Task<ResultResponse<IEnumerable<GetGoldenBooksResultDTO>>> GetGoldenBooksAsync()
         {
             var result = await _unitOfWork.BooksRepository.GetGoldenBooksAsync();

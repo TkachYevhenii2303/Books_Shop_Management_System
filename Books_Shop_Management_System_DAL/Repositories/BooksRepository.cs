@@ -25,7 +25,8 @@ namespace Books_Shop_Management_System_DAL.Repositories
             var resultResponse = new ResultResponse<IEnumerable<Books>>();
 
             resultResponse.Result = await _context.Set<Books>()
-                .Where(x => x.AgeRestriction == ReturnRestrinctionTypeUsingString(ageRestriction.ToLower())).ToListAsync();
+                .Where(x => x.AgeRestriction == ReturnRestrinctionTypeUsingString(ageRestriction.ToLower()))
+                .AsNoTracking().ToListAsync();
 
             resultResponse.Message = "Returning all Books by age restriction type!!!";
 
@@ -47,7 +48,8 @@ namespace Books_Shop_Management_System_DAL.Repositories
             var resultResponse = new ResultResponse<IEnumerable<Books>>();
 
             resultResponse.Result = await _context.Set<Books>()
-                .Where(x => x.EditionType == EditionType.PopularMagazines && x.Copies < 500).ToListAsync();
+                .Where(x => x.EditionType == EditionType.PopularMagazines && x.Copies < 500)
+                .AsNoTracking().ToListAsync();
 
             resultResponse.Message = "Returning all Books by edition type and number of copies!!!";
 
@@ -59,9 +61,23 @@ namespace Books_Shop_Management_System_DAL.Repositories
             var resultResponse = new ResultResponse<IEnumerable<Books>>();
 
             resultResponse.Result = await _context.Set<Books>()
-                .Where(x => x.Price > 40).OrderByDescending(x => x.Price).ToListAsync();
+                .Where(x => x.Price > 40).OrderByDescending(x => x.Price)
+                .AsNoTracking().ToListAsync();
 
             resultResponse.Message = "Returning all Books by prices that more than 40$!!!";
+
+            return resultResponse;
+        }
+
+        public async Task<ResultResponse<IEnumerable<Books>>> GetBooksNotRealeasedAsync(int year)
+        {
+            var resultResponse = new ResultResponse<IEnumerable<Books>>();
+
+            resultResponse.Result = await _context.Set<Books>()
+                .Where(x => x.ReleaseDate.Year != year)
+                .AsNoTracking().ToListAsync();
+
+            resultResponse.Message = "Returning all Books by not given year!!!";
 
             return resultResponse;
         }

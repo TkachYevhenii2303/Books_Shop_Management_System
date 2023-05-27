@@ -14,5 +14,7 @@ namespace Books_Shop_Management_System_DAL.Repositories.Interfaces
         Task<ResultResponse<IEnumerable<Books>>> GetGoldenBooksAsync();
 
         Task<ResultResponse<IEnumerable<Books>>> GetBooksByPriceAsync();
+
+        Task<ResultResponse<IEnumerable<Books>>> GetBooksNotRealeasedAsync(int year);
     }
 }

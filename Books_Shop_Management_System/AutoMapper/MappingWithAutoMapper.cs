@@ -19,8 +19,12 @@ namespace Books_Shop_Management_System.AutoMapper
             CreateMap<Books, GetGoldenBooksResultDTO>();
 
             CreateMap<Books, GetBooksByPriceResultDTO>()
-                .ForMember(destination => destination.Price,
-                options => options.MapFrom(source => $"The price is {source.Price}$"));
+                .ForMember(destination => destination.Total,
+                options => options.MapFrom(source => $"This book cost: {source.Price}$"));
+
+            CreateMap<Books, GetBooksTitleAndYearResultDTO>()
+                .ForMember(destination => destination.Information,
+                options => options.MapFrom(source => $"The title is {source.Title} and the date of realese is {source.ReleaseDate}"));
         }
 
         private void GenerateResultResponseMapper()

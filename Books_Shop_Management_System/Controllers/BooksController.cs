@@ -42,10 +42,23 @@ namespace Books_Shop_Management_System.Controllers
             return Ok(result);
         }
 
-        [HttpGet, Route("Return_books_by_Price")]
+        [HttpGet, Route("Return_books_by_price")]
         public async Task<ActionResult<ResultResponse<IEnumerable<GetBooksByPriceResultDTO>>>> GetBooksByPriceAsync()
         {
             var result = await _booksServices.GetBooksByPriceAsync();
+
+            if (result is null)
+            {
+                throw new ArgumentNullException($"Something went wrong... Location is {typeof(BooksController)}");
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet, Route("Return_books_with_not_year")]
+        public async Task<ActionResult<ResultResponse<IEnumerable<GetBooksTitleAndYearResultDTO>>>> GetBooksNotRealeasedAsync(int year)
+        {
+            var result = await _booksServices.GetBooksNotRealeasedAsync(year);
 
             if (result is null)
             {

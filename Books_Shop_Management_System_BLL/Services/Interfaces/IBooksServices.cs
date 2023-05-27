@@ -15,5 +15,7 @@ namespace Books_Shop_Management_System_BLL.Services.Interfaces
         Task<ResultResponse<IEnumerable<GetGoldenBooksResultDTO>>> GetGoldenBooksAsync();
 
         Task<ResultResponse<IEnumerable<GetBooksByPriceResultDTO>>> GetBooksByPriceAsync();
+
+        Task<ResultResponse<IEnumerable<GetBooksTitleAndYearResultDTO>>> GetBooksNotRealeasedAsync(int year);
     }
 }

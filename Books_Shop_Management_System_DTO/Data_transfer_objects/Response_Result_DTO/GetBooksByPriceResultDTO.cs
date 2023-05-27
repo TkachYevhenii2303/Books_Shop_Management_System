@@ -12,6 +12,6 @@ namespace Books_Shop_Management_System_DTO.Data_transfer_objects.Response_Result
 
         public string Description { get; set; } = string.Empty;
 
-        public Decimal Price { get; set; }
+        public string Total { get; set; } = string.Empty;
     }
 }
