@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books_Shop_Management_Syste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books_Shop_Management_System_Migrations", "..\Books_Shop_Management_System_Migrations\Books_Shop_Management_System_Migrations.csproj", "{BA063263-43B4-45CD-931A-CC212A273174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books_Shop_Management_System_BLL", "..\Books_Shop_Management_System_BLL\Books_Shop_Management_System_BLL.csproj", "{2B1931C6-87D8-4751-A6A7-676BAA896DB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books_Shop_Management_System_BLL", "..\Books_Shop_Management_System_BLL\Books_Shop_Management_System_BLL.csproj", "{2B1931C6-87D8-4751-A6A7-676BAA896DB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books_Shop_Management_System_DTO", "..\Books_Shop_Management_System_DTO\Books_Shop_Management_System_DTO.csproj", "{2C68381D-09F4-4591-9F21-6D17DDFE5945}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Books_Shop_Management_System_DTO", "..\Books_Shop_Management_System_DTO\Books_Shop_Management_System_DTO.csproj", "{2C68381D-09F4-4591-9F21-6D17DDFE5945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books_Shop_Management_System_Console", "..\Books_Shop_Management_System_Console\Books_Shop_Management_System_Console.csproj", "{350B6380-8A62-4F6D-857B-3FE98C8FDC45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2C68381D-09F4-4591-9F21-6D17DDFE5945}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C68381D-09F4-4591-9F21-6D17DDFE5945}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C68381D-09F4-4591-9F21-6D17DDFE5945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{350B6380-8A62-4F6D-857B-3FE98C8FDC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{350B6380-8A62-4F6D-857B-3FE98C8FDC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{350B6380-8A62-4F6D-857B-3FE98C8FDC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{350B6380-8A62-4F6D-857B-3FE98C8FDC45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
